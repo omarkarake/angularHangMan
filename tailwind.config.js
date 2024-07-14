@@ -19,6 +19,9 @@ module.exports = {
         'heading-s': ['32px', '120%'],
         'body': ['26px', '120%'],
       },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(to bottom, #130556 0%, #000000 100%)',
+      },
     },
   },
   plugins: [],
