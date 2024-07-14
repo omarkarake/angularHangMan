@@ -32,6 +32,8 @@ module.exports = {
         'inner-custom-top-btn2': 'inset 0 1px 0 6px #C642FB',
         'inner-custom-play-btn1': 'inset 0 -4px 0 5px #243041',
         'inner-custom-play-btn2': 'inset 0 -12px 0 11px #9D2DF5',
+        'inner-custom-home1': 'inset 0 -8px 0 4px #140E66',
+        'inner-custom-home2': 'inset 0 6px 0 8px #2463FF',
       },
     },
   },
