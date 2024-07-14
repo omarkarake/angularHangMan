@@ -9,6 +9,7 @@ import { NavigatioHeaderComponent } from './components/navigatio-header/navigati
 import { PickCategoryComponent } from './pages/pick-category/pick-category.component';
 import { InGameComponent } from './pages/in-game/in-game.component';
 import { PauseMenuComponent } from './pages/pause-menu/pause-menu.component';
+import { YouWinComponent } from './pages/you-win/you-win.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PauseMenuComponent } from './pages/pause-menu/pause-menu.component';
     NavigatioHeaderComponent,
     PickCategoryComponent,
     InGameComponent,
-    PauseMenuComponent
+    PauseMenuComponent,
+    YouWinComponent
   ],
   imports: [
     BrowserModule,
