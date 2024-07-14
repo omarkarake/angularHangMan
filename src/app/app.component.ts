@@ -1,14 +1,24 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'angularHangMan';
+  showHome = true;
+  showHowToPlay = false;
+
   constructor() {}
+
   openHowToPlay() {
-    console.log('go to how to play clicked');
+    this.showHome = false;
+    this.showHowToPlay = true;
+  }
+
+  goBackToHome() {
+    this.showHome = true;
+    this.showHowToPlay = false;
   }
 }

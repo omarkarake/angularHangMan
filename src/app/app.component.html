@@ -1,8 +1,9 @@
+<!-- src/app/app.component.html -->
 <div
   class="min-h-screen max-h-[100%] w-[100%] bg-[url('./assets/images/background-tablet.svg')] bg-no-repeat bg-cover md:bg-[url('./assets/images/background-tablet.svg')] lg:bg-[url('./assets/images/background-desktop.svg')]"
 >
-  <app-home (openHowToPlay)="openHowToPlay()"/>
-  <!-- <app-how-to-play /> -->
+  <app-home *ngIf="showHome" (openHowToPlay)="openHowToPlay()"></app-home>
+  <app-how-to-play *ngIf="showHowToPlay" (goBack)="goBackToHome()"></app-how-to-play>
   <!-- <app-pick-category /> -->
   <!-- <app-in-game /> -->
   <!-- <app-pause-menu /> -->
