@@ -15,10 +15,13 @@ export class AppComponent {
 
   openHowToPlay() {
     this.showHome = false;
+    this.showPickACategory = false;
     this.showHowToPlay = true;
+
   }
   openToPlay() {
     this.showHome = false;
+    this.showHowToPlay = false;
     this.showPickACategory = true;
   }
 
