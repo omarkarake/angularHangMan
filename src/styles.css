@@ -12,3 +12,8 @@
 .bg-blue-gradient-opacity-80 {
   background: linear-gradient(to bottom, rgba(52, 74, 186) 0%, rgba(0, 20, 121, 0.8) 83%);
 }
+.gradient-text {
+  background: linear-gradient(to bottom, #67B6FF 0%, #FFFFFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
