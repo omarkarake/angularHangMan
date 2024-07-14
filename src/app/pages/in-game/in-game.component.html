@@ -4,25 +4,27 @@
   <app-navigatio-header></app-navigatio-header>
   <div>
     <!-- for upper game control -->
-    <div class="min-h-[150px] max-h-full mt-[78px]">
-      <div class="bg-blue flex items-center flex-wrap gap-2 md:gap-3 lg:gap-4">
-        <div
-          *ngFor="let letter of word.split('')"
-          [ngClass]="{
-            'w-[40px] h-[66px] md:w-[88px] md:h-[112px] lg:w-[112px] lg:h-[128px] rounded-[40px] cursor-pointer': true,
-            'bg-blue text-white lg:text-heading-s shadow-inner-custom-top-btn': !isSpecialLetter(letter),
-            'bg-blue opacity-20 text-white text-heading-s shadow-inner-custom-top-btn': isSpecialLetter(letter)
-          }"
-        >
+    <div class="min-h-[150px] max-h-full mt-[78px] flex flex-col items-center gap-4">
+      <div *ngFor="let wordPart of word.split(' ')">
+        <div class="flex items-center flex-wrap gap-2 md:gap-3 lg:gap-4">
           <div
-            class="w-[100%] h-[100%] shadow-inner-custom-bottom-btn rounded-[40px] flex justify-center items-center"
+            *ngFor="let letter of wordPart.split('')"
+            [ngClass]="{
+              'w-[40px] h-[66px] md:w-[88px] md:h-[112px] lg:w-[112px] lg:h-[128px] rounded-[40px] cursor-pointer': true,
+              'bg-blue text-white lg:text-heading-s shadow-inner-custom-top-btn': !isSpecialLetter(letter),
+              'bg-blue opacity-20 text-white text-heading-s shadow-inner-custom-top-btn': isSpecialLetter(letter)
+            }"
           >
-            <p
-              *ngIf="!isSpecialLetter(letter)"
-              class="text-[40px] md:text-[64px] leading-[120%] lg:text-heading-l text-white"
+            <div
+              class="w-[100%] h-[100%] shadow-inner-custom-bottom-btn rounded-[40px] flex justify-center items-center"
             >
-              {{ letter }}
-            </p>
+              <p
+                *ngIf="!isSpecialLetter(letter)"
+                class="text-[40px] md:text-[64px] leading-[120%] lg:text-heading-l text-white"
+              >
+                {{ letter }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
