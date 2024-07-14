@@ -10,6 +10,7 @@ import { PickCategoryComponent } from './pages/pick-category/pick-category.compo
 import { InGameComponent } from './pages/in-game/in-game.component';
 import { PauseMenuComponent } from './pages/pause-menu/pause-menu.component';
 import { YouWinComponent } from './pages/you-win/you-win.component';
+import { YouLoseComponent } from './pages/you-lose/you-lose.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { YouWinComponent } from './pages/you-win/you-win.component';
     PickCategoryComponent,
     InGameComponent,
     PauseMenuComponent,
-    YouWinComponent
+    YouWinComponent,
+    YouLoseComponent
   ],
   imports: [
     BrowserModule,
