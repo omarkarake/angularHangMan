@@ -29,6 +29,7 @@ module.exports = {
       boxShadow: {
         'inner-custom-bottom-btn': 'inset 0 -2px 0 3px #140E66',
         'inner-custom-top-btn': 'inset 0 1px 0 6px #3C74FF',
+        'inner-custom-top-btn2': 'inset 0 1px 0 6px #C642FB',
       },
     },
   },
