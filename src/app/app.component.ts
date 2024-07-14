@@ -9,12 +9,17 @@ export class AppComponent {
   title = 'angularHangMan';
   showHome = true;
   showHowToPlay = false;
+  showPickACategory = false;
 
   constructor() {}
 
   openHowToPlay() {
     this.showHome = false;
     this.showHowToPlay = true;
+  }
+  openToPlay() {
+    this.showHome = false;
+    this.showPickACategory = true;
   }
 
   goBackToHome() {

@@ -7,8 +7,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HomeComponent {
   @Output() openHowToPlay = new EventEmitter();
+  @Output() openToPlay = new EventEmitter();
   constructor() {}
   goToHowToPlay() {
     this.openHowToPlay.emit();
+  }
+  goToPlay() {
+    this.openToPlay.emit();
   }
 }

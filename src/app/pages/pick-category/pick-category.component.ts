@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-pick-category',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './pick-category.component.css'
 })
 export class PickCategoryComponent {
+  @Output() goBack = new EventEmitter();
 
+  constructor() {}
+
+  backToHome() {
+    this.goBack.emit();
+  }
 }

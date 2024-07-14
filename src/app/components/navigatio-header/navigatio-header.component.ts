@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navigatio-header',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './navigatio-header.component.css'
 })
 export class NavigatioHeaderComponent {
+  @Output() back = new EventEmitter();
 
+  constructor() {}
+
+  goBack() {
+    this.back.emit();
+  }
 }

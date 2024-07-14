@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-how-to-play',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './how-to-play.component.css'
 })
 export class HowToPlayComponent {
+  @Output() goBack = new EventEmitter();
 
+  constructor() {}
+
+  backToHome() {
+    this.goBack.emit();
+  }
 }
