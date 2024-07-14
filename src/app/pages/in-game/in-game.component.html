@@ -1,19 +1,17 @@
 <div
   class="bg-blue-action-gradient-opacity min-h-screen max-h-[100%] w-[100%] font-mouseMemoirs px-[26px] pt-8 md:px-[48px] md:pt-[61px] lg:px-[112px] lg:pt-[80px]"
 >
-  <app-navigatio-header />
+  <app-navigatio-header></app-navigatio-header>
   <div>
     <!-- for upper game control -->
     <div class="min-h-[150px] max-h-full mt-[78px]">
-      <div class="flex items-center justify-center flex-wrap gap-2">
+      <div class="bg-blue flex items-center flex-wrap gap-2 md:gap-3 lg:gap-4">
         <div
           *ngFor="let letter of word.split('')"
           [ngClass]="{
             'w-[40px] h-[66px] md:w-[88px] md:h-[112px] lg:w-[112px] lg:h-[128px] rounded-[40px] cursor-pointer': true,
-            'bg-blue text-white lg:text-heading-s shadow-inner-custom-top-btn':
-              !isSpecialLetter(letter),
-            'bg-blue opacity-20 text-white text-heading-s shadow-inner-custom-top-btn':
-              isSpecialLetter(letter)
+            'bg-blue text-white lg:text-heading-s shadow-inner-custom-top-btn': !isSpecialLetter(letter),
+            'bg-blue opacity-20 text-white text-heading-s shadow-inner-custom-top-btn': isSpecialLetter(letter)
           }"
         >
           <div
@@ -31,18 +29,22 @@
     </div>
 
     <!-- for lower game keyboard control -->
-     <!-- active and hover -->
-    <div class="h-[300px] mt-[118px]">
-      <div
-        class="w-[28px] h-[56px] md:w-[64px] lg:w-[109px] md:h-[84px] bg-white rounded-[24px] hover:bg-blue text-darkNavy hover:text-white flex justify-center items-center mt-2"
-      >
-        <p class="text-[24px] md:text-heading-m">A</p>
-      </div>
-      <!-- disable div -->
-      <div
-        class="w-[28px] h-[56px] md:w-[64px] lg:w-[109px] md:h-[84px] bg-white opacity-25 rounded-[24px] flex justify-center items-center mt-2"
-      >
-        <p class="text-[24px] md:text-heading-m text-darkNavy">A</p>
+    <div class="h-[300px] md:h-auto mt-[118px] flex flex-wrap gap-2 md:gap-4 lg:gap-6 items-center">
+      <div *ngFor="let letter of alphabet">
+        <!-- Active and hover -->
+        <div
+          *ngIf="!isDisabledLetter(letter)"
+          class="w-[28px] h-[56px] md:w-[64px] lg:w-[109px] md:h-[84px] bg-white rounded-[24px] hover:bg-blue text-darkNavy hover:text-white flex justify-center items-center mt-2 cursor-pointer"
+        >
+          <p class="text-[24px] md:text-heading-m">{{ letter }}</p>
+        </div>
+        <!-- Disabled div -->
+        <div
+          *ngIf="isDisabledLetter(letter)"
+          class="w-[28px] h-[56px] md:w-[64px] lg:w-[109px] md:h-[84px] bg-white opacity-25 rounded-[24px] flex justify-center items-center mt-2"
+        >
+          <p class="text-[24px] md:text-heading-m text-darkNavy">{{ letter }}</p>
+        </div>
       </div>
     </div>
   </div>
