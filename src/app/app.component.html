@@ -3,8 +3,8 @@
   class="min-h-screen max-h-[100%] w-[100%] bg-[url('./assets/images/background-tablet.svg')] bg-no-repeat bg-cover md:bg-[url('./assets/images/background-tablet.svg')] lg:bg-[url('./assets/images/background-desktop.svg')]"
 >
   <app-home *ngIf="showHome" (openHowToPlay)="openHowToPlay()" (openToPlay)="openToPlay()"></app-home>
-  <app-how-to-play *ngIf="showHowToPlay" (goBack)="goBackToHome()"></app-how-to-play>
-  <app-pick-category *ngIf="showPickACategory" (goBack)="goBackToHome()" />
+  <app-how-to-play [pageType]="'pick-category'" *ngIf="showHowToPlay" (goBack)="goBackToHome()"></app-how-to-play>
+  <app-pick-category [pageType]="'pick-category'" *ngIf="showPickACategory" (goBack)="goBackToHome()" />
   <!-- <app-in-game /> -->
   <!-- <app-pause-menu /> -->
   <!-- <app-you-win /> -->

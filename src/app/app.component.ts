@@ -17,8 +17,8 @@ export class AppComponent {
     this.showHome = false;
     this.showPickACategory = false;
     this.showHowToPlay = true;
-
   }
+
   openToPlay() {
     this.showHome = false;
     this.showHowToPlay = false;
@@ -28,5 +28,6 @@ export class AppComponent {
   goBackToHome() {
     this.showHome = true;
     this.showHowToPlay = false;
+    this.showPickACategory = false; // Fix this line
   }
 }

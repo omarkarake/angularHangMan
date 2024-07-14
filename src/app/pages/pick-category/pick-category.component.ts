@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-pick-category',
@@ -7,6 +7,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class PickCategoryComponent {
   @Output() goBack = new EventEmitter();
+  @Input('pageType') pageType: string | undefined;
+
 
   constructor() {}
 

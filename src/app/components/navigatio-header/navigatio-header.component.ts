@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navigatio-header',
@@ -7,6 +7,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class NavigatioHeaderComponent {
   @Output() back = new EventEmitter();
+  @Input('pageType') pageType: string | undefined;
 
   constructor() {}
 

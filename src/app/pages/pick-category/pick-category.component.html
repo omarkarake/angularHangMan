@@ -1,7 +1,7 @@
 <div
   class="bg-blue-action-gradient-opacity min-h-screen max-h-[100%] w-[100%] font-mouseMemoirs px-[26px] pt-8 md:px-[48px] md:pt-[61px] lg:px-[112px] lg:pt-[80px]"
 >
-  <app-navigatio-header (back)="backToHome()"/>
+  <app-navigatio-header [pageType]="pageType" (back)="backToHome()"/>
   <div class="w-[100%] mt-[79px] flex flex-col gap-4 md:flex-row flex-wrap md:justify-between">
     <div
       class="w-[100%] h-[77px] md:w-[324px] md:h-[182px] lg:w-[350px] lg:h-[190px] bg-blue rounded-[20px] lg:rounded-[40px] text-white text-heading-m shadow-inner-custom-top-btn cursor-pointer"
