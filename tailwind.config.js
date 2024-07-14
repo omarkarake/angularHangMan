@@ -23,6 +23,7 @@ module.exports = {
         'custom-gradient': 'linear-gradient(to bottom, #130556 0%, #000000 100%)',
         'pink-gradient': 'linear-gradient(to bottom, #FE71FE 0%, #7199FF 100%)',
         'blue-gradient': 'linear-gradient(to bottom, #344ABA 0%, #001479 83%)',
+        'blue-action-gradient': 'linear-gradient(to bottom, #1A043A 0%, #151278 70%, #2B1677 100%)',
       },
       backgroundColor: {
         'white-opacity-20': 'rgba(255, 255, 255, 0.2)',
