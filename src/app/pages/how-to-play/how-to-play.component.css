@@ -1,0 +1,29 @@
+.container {
+    display: grid;
+    grid-template-areas: 
+        "number title"
+        "description description";
+    grid-template-columns: auto 1fr;
+}
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-areas: 
+            "number title"
+            "number description";
+        grid-template-columns: auto 1fr;
+        gap: 40px;
+    }
+}
+
+.number {
+    grid-area: number;
+}
+
+.title {
+    grid-area: title;
+}
+
+.description {
+    grid-area: description;
+}
