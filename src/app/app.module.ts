@@ -8,6 +8,7 @@ import { HowToPlayComponent } from './pages/how-to-play/how-to-play.component';
 import { NavigatioHeaderComponent } from './components/navigatio-header/navigatio-header.component';
 import { PickCategoryComponent } from './pages/pick-category/pick-category.component';
 import { InGameComponent } from './pages/in-game/in-game.component';
+import { PauseMenuComponent } from './pages/pause-menu/pause-menu.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { InGameComponent } from './pages/in-game/in-game.component';
     HowToPlayComponent,
     NavigatioHeaderComponent,
     PickCategoryComponent,
-    InGameComponent
+    InGameComponent,
+    PauseMenuComponent
   ],
   imports: [
     BrowserModule,
