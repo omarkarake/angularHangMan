@@ -4,24 +4,8 @@
   <app-navigatio-header />
   <div>
     <!-- for upper game control -->
-    <div class="min-h-[300px] max-h-full mt-[78px]">
+    <div class="min-h-[150px] max-h-full mt-[78px]">
       <div class="flex items-center justify-center flex-wrap gap-2">
-        <!-- <div
-          class="w-[40px] h-[66px] md:w-[88px] md:h-[112px] lg:w-[112px] lg:h-[128px] bg-blue rounded-[40px] text-white lg:text-heading-s shadow-inner-custom-top-btn cursor-pointer"
-        >
-          <div
-            class="w-[100%] h-[100%] shadow-inner-custom-bottom-btn rounded-[40px] flex justify-center items-center"
-          >
-            <p class="text-[40px] md:text-[64px] leading-[120%] lg:text-heading-l">A</p>
-          </div>
-        </div>
-        <div
-          class="w-[40px] h-[66px] md:w-[88px] md:h-[112px] lg:w-[112px] lg:h-[128px] bg-blue opacity-20 rounded-[40px] text-white text-heading-s shadow-inner-custom-top-btn cursor-pointer"
-        >
-          <div
-            class="w-[100%] h-[100%] shadow-inner-custom-bottom-btn rounded-[40px] flex justify-center items-center"
-          ></div>
-        </div> -->
         <div
           *ngFor="let letter of word.split('')"
           [ngClass]="{
@@ -44,10 +28,20 @@
           </div>
         </div>
       </div>
-      <div></div>
     </div>
 
     <!-- for lower game keyboard control -->
-    <div class="bg-blue h-[300px] mt-[118px]"></div>
+    <div class="bg-blue h-[300px] mt-[118px]">
+      <div
+        class="w-[28px] h-[56px] md:w-[64px] lg:w-[109px] md:h-[84px] bg-white rounded-[24px] hover:bg-blue text-darkNavy hover:text-white flex justify-center items-center mt-2"
+      >
+        <p class="text-[24px] md:text-heading-m">A</p>
+      </div>
+      <div
+        class="w-[28px] h-[56px] md:w-[64px] lg:w-[109px] md:h-[84px] bg-white opacity-25 rounded-[24px] flex justify-center items-center mt-2"
+      >
+        <p class="text-[24px] md:text-heading-m text-darkNavy">A</p>
+      </div>
+    </div>
   </div>
 </div>
