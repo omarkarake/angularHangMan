@@ -6,7 +6,7 @@
     <!-- for upper game control -->
     <div class="min-h-[300px] max-h-full mt-[78px]">
       <div class="flex items-center justify-center flex-wrap gap-2">
-        <div
+        <!-- <div
           class="w-[40px] h-[66px] md:w-[88px] md:h-[112px] lg:w-[112px] lg:h-[128px] bg-blue rounded-[40px] text-white lg:text-heading-s shadow-inner-custom-top-btn cursor-pointer"
         >
           <div
@@ -21,6 +21,27 @@
           <div
             class="w-[100%] h-[100%] shadow-inner-custom-bottom-btn rounded-[40px] flex justify-center items-center"
           ></div>
+        </div> -->
+        <div
+          *ngFor="let letter of word.split('')"
+          [ngClass]="{
+            'w-[40px] h-[66px] md:w-[88px] md:h-[112px] lg:w-[112px] lg:h-[128px] rounded-[40px] cursor-pointer': true,
+            'bg-blue text-white lg:text-heading-s shadow-inner-custom-top-btn':
+              !isSpecialLetter(letter),
+            'bg-blue opacity-20 text-white text-heading-s shadow-inner-custom-top-btn':
+              isSpecialLetter(letter)
+          }"
+        >
+          <div
+            class="w-[100%] h-[100%] shadow-inner-custom-bottom-btn rounded-[40px] flex justify-center items-center"
+          >
+            <p
+              *ngIf="!isSpecialLetter(letter)"
+              class="text-[40px] md:text-[64px] leading-[120%] lg:text-heading-l text-white"
+            >
+              {{ letter }}
+            </p>
+          </div>
         </div>
       </div>
       <div></div>
