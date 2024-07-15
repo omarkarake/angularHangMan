@@ -37,6 +37,35 @@ export class InGameComponent implements OnInit {
     return this.disabledLetters.includes(letter);
   }
 
+  // isTheLetterIncludeInString(letter: string) {
+  //   if (!this.word.toLowerCase().includes(letter.toLowerCase())) {
+  //     this.disabledLetters.push(letter);
+  //     this.losedLetter.push(letter);
+  //     this.gameStateService.updateLosedLetterLength(this.losedLetter.length);
+  //     if (this.losedLetter.length === 8) {
+  //       console.log('you lost');
+  //     }
+  //   } else {
+  //     if (this.specialLetters.includes(letter)) {
+  //       this.indexOfSpecialLetter = this.specialLetters.indexOf(letter);
+  //       this.specialLetters.splice(this.indexOfSpecialLetter, 1);
+  //       this.gameStateService.updateLosedLetterLength(this.losedLetter.length);
+  //       if (this.losedLetter.length === 8) {
+  //         console.log('you lost');
+  //       }
+  //       if (this.specialLetters.length < 1) {
+  //         console.log('you win');
+  //       }
+  //     } else {
+  //       this.losedLetter.push(letter);
+  //       this.disabledLetters.push(letter);
+  //       this.gameStateService.updateLosedLetterLength(this.losedLetter.length);
+  //       if (this.losedLetter.length === 8) {
+  //         console.log('you lost');
+  //       }
+  //     }
+  //   }
+  // }
   isTheLetterIncludeInString(letter: string) {
     if (!this.word.toLowerCase().includes(letter.toLowerCase())) {
       this.disabledLetters.push(letter);
@@ -44,28 +73,21 @@ export class InGameComponent implements OnInit {
       this.gameStateService.updateLosedLetterLength(this.losedLetter.length);
       if (this.losedLetter.length === 8) {
         console.log('you lost');
+        this.gameStateService.updateGameResult('lose');
       }
     } else {
       if (this.specialLetters.includes(letter)) {
         this.indexOfSpecialLetter = this.specialLetters.indexOf(letter);
         this.specialLetters.splice(this.indexOfSpecialLetter, 1);
-        this.gameStateService.updateLosedLetterLength(this.losedLetter.length);
-        if (this.losedLetter.length === 8) {
-          console.log('you lost');
-        }
         if (this.specialLetters.length < 1) {
           console.log('you win');
-        }
-      } else {
-        this.losedLetter.push(letter);
-        this.disabledLetters.push(letter);
-        this.gameStateService.updateLosedLetterLength(this.losedLetter.length);
-        if (this.losedLetter.length === 8) {
-          console.log('you lost');
+          this.gameStateService.updateGameResult('win');
         }
       }
+      this.disabledLetters.push(letter);
     }
   }
+  
   handlePlayAgainEvent() {
     this.gameStateService.resetGameState();
     this.playAgain.emit();

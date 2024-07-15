@@ -22,15 +22,21 @@ export class NavigatioHeaderComponent implements OnInit {
       this.losedLetterLength = length;
       if (this.losedLetterLength === 8) {
         this.gameResult = 'lose';
+        console.log('you lost in the navigation');
       }
     });
-
+  
     this.gameStateService.gameResult$.subscribe(result => {
       if (result === 'win') {
         this.gameResult = 'win';
+        console.log('you won in the navigation');
+      } else if (result === 'lose') {
+        this.gameResult = 'lose';
+        console.log('you lost in the navigation');
       }
     });
   }
+  
 
   goBack() {
     this.back.emit();
