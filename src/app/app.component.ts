@@ -1,4 +1,6 @@
+// src/app/app.component.ts
 import { Component } from '@angular/core';
+import { GameStateService } from './services/game-state.service';
 
 @Component({
   selector: 'app-root',
@@ -60,7 +62,7 @@ export class AppComponent {
     ]
   };
 
-  constructor() {
+  constructor(private gameStateService: GameStateService) {
     this.transformDataToUpperCase();
   }
 
@@ -116,5 +118,11 @@ export class AppComponent {
     }
 
     return uniqueLetters.slice(0, specialLettersCount);
+  }
+
+  handlePlayAgainEvent() {
+    this.gameStateService.resetGameState();
+    console.log("play again clicked in app component");
+    this.pickCategoryEvent('movies'); // you can modify to randomly pick a category or based on previous selection
   }
 }

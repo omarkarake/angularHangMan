@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+// src/app/pages/in-game/in-game.component.ts
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { GameStateService } from '../../services/game-state.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { GameStateService } from '../../services/game-state.service';
 export class InGameComponent implements OnInit {
   @Input() word: string = '';
   @Input() specialLetters: string[] = [];
+  @Output() playAgain = new EventEmitter();
   disabledLetters: string[] = [];
   alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   indexOfSpecialLetter: number | undefined;
@@ -18,7 +20,13 @@ export class InGameComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("initial word and disabled letter", this.word, this.disabledLetters);
-    console.log("initial word and special letters",this.word, this.specialLetters);
+    console.log("initial word and special letters", this.word, this.specialLetters);
+
+    this.gameStateService.resetGameState$.subscribe(() => {
+      this.disabledLetters = [];
+      this.losedLetter = [];
+      console.log("Game state has been reset");
+    });
   }
 
   isSpecialLetter(letter: string): boolean {
@@ -57,5 +65,10 @@ export class InGameComponent implements OnInit {
         }
       }
     }
+  }
+  handlePlayAgainEvent() {
+    this.gameStateService.resetGameState();
+    this.playAgain.emit();
+    console.log("play again clicked in in-game");
   }
 }

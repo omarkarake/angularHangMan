@@ -1,12 +1,17 @@
 <!-- src/app/app.component.html -->
-<div
+<!-- <div
   class="min-h-screen max-h-[100%] overflow-hidden bg-[url('./assets/images/background-tablet.svg')] bg-no-repeat bg-cover md:bg-[url('./assets/images/background-tablet.svg')] lg:bg-[url('./assets/images/background-desktop.svg')]"
 >
   <app-home *ngIf="showHome" (openHowToPlay)="openHowToPlay()" (openToPlay)="openToPlay()"></app-home>
   <app-how-to-play [pageType]="'pick-category'" *ngIf="showHowToPlay" (goBack)="goBackToHome()"></app-how-to-play>
   <app-pick-category [pageType]="'pick-category'" *ngIf="showPickACategory" (goBack)="goBackToHome()" (pickCategoryEvent)="pickCategoryEvent($event)" />
   <app-in-game  *ngIf="showInGame" [word]="currentWord" [specialLetters]="specialLetters"/>
-  <!-- <app-pause-menu /> -->
-  <!-- <app-you-win /> -->
-  <!-- <app-you-lose /> -->
+</div> -->
+
+<!-- src/app/app.component.html -->
+<div class="min-h-screen max-h-[100%] overflow-hidden bg-[url('./assets/images/background-tablet.svg')] bg-no-repeat bg-cover md:bg-[url('./assets/images/background-tablet.svg')] lg:bg-[url('./assets/images/background-desktop.svg')]">
+  <app-home *ngIf="showHome" (openHowToPlay)="openHowToPlay()" (openToPlay)="openToPlay()"></app-home>
+  <app-how-to-play [pageType]="'pick-category'" *ngIf="showHowToPlay" (goBack)="goBackToHome()"></app-how-to-play>
+  <app-pick-category [pageType]="'pick-category'" *ngIf="showPickACategory" (goBack)="goBackToHome()" (pickCategoryEvent)="pickCategoryEvent($event)" />
+  <app-in-game (playAgain)="handlePlayAgainEvent()" *ngIf="showInGame" [word]="currentWord" [specialLetters]="specialLetters"/>
 </div>

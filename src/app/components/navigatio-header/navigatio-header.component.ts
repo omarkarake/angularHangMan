@@ -1,3 +1,4 @@
+// src/app/components/navigatio-header/navigatio-header.component.ts
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { GameStateService } from '../../services/game-state.service';
 
@@ -8,6 +9,7 @@ import { GameStateService } from '../../services/game-state.service';
 })
 export class NavigatioHeaderComponent implements OnInit {
   @Output() back = new EventEmitter();
+  @Output() playAgain = new EventEmitter();
   @Input('pageType') pageType: string | undefined;
   losedLetterLength: number = 0;
   isPauseModelVisible: boolean = false;
@@ -44,5 +46,11 @@ export class NavigatioHeaderComponent implements OnInit {
 
   closeGameResultModel() {
     this.gameResult = null;
+  }
+
+  playAgainBtn() {
+    console.log("play again in navigation clicked");
+    this.playAgain.emit();
+    this.closeGameResultModel();
   }
 }
