@@ -11,6 +11,51 @@ export class AppComponent {
   showHowToPlay = false;
   showPickACategory = false;
 
+  data = {
+    movies: [
+        "The Shawshank Redemption",
+        "The Godfather",
+        "The Dark Knight",
+        "Pulp Fiction",
+        "Forrest Gump"
+    ],
+    tvShows: [
+        "Breaking Bad",
+        "Game of Thrones",
+        "Friends",
+        "The Office",
+        "Stranger Things"
+    ],
+    countries: [
+        "United States",
+        "Canada",
+        "Germany",
+        "Australia",
+        "Japan"
+    ],
+    capitalCities: [
+        "Washington, D.C.",
+        "Ottawa",
+        "Berlin",
+        "Canberra",
+        "Tokyo"
+    ],
+    animals: [
+        "Lion",
+        "Elephant",
+        "Dolphin",
+        "Penguin",
+        "Kangaroo"
+    ],
+    sports: [
+        "Soccer",
+        "Basketball",
+        "Tennis",
+        "Cricket",
+        "Baseball"
+    ]
+};
+
   constructor() {}
 
   openHowToPlay() {
@@ -29,5 +74,9 @@ export class AppComponent {
     this.showHome = true;
     this.showHowToPlay = false;
     this.showPickACategory = false; // Fix this line
+  }
+
+  pickCategoryEvent(category: string){
+    console.log(category);
   }
 }
