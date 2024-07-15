@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-in-game',
@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./in-game.component.css']
 })
 export class InGameComponent {
-  word = 'UNITED KINGDOM';
-  specialLetters = ['T', 'E', 'K', 'G', 'M'];
-  disabledLetters = ['D', 'I', 'N', 'O', 'U'];
+  @Input() word: string = '';
+  @Input() specialLetters: string[] = [];
+  @Input() disabledLetters: string[] = [];
   alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
   isSpecialLetter(letter: string): boolean {
