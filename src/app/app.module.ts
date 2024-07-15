@@ -8,9 +8,6 @@ import { HowToPlayComponent } from './pages/how-to-play/how-to-play.component';
 import { NavigatioHeaderComponent } from './components/navigatio-header/navigatio-header.component';
 import { PickCategoryComponent } from './pages/pick-category/pick-category.component';
 import { InGameComponent } from './pages/in-game/in-game.component';
-import { PauseMenuComponent } from './pages/pause-menu/pause-menu.component';
-import { YouWinComponent } from './pages/you-win/you-win.component';
-import { YouLoseComponent } from './pages/you-lose/you-lose.component';
 import { CustomTransformPipe } from './pipe/custom-transform.pipe';
 
 @NgModule({
@@ -21,9 +18,6 @@ import { CustomTransformPipe } from './pipe/custom-transform.pipe';
     NavigatioHeaderComponent,
     PickCategoryComponent,
     InGameComponent,
-    PauseMenuComponent,
-    YouWinComponent,
-    YouLoseComponent,
     CustomTransformPipe
   ],
   imports: [

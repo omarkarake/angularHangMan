@@ -1,4 +1,3 @@
-// src/app/pipes/custom-transform.pipe.ts
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({

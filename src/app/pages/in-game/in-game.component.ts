@@ -1,4 +1,3 @@
-// src/app/pages/in-game/in-game.component.ts
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { GameStateService } from '../../services/game-state.service';
 
