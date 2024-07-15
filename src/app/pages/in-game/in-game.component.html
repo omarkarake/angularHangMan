@@ -34,13 +34,13 @@
     <div class="h-[300px] md:h-auto mt-[118px] flex flex-wrap gap-2 md:gap-4 lg:gap-6 items-center">
       <div *ngFor="let letter of alphabet">
         <!-- Active and hover -->
-        <div
+        <div (click)="isTheLetterIncludeInString(letter)"
           *ngIf="!isDisabledLetter(letter)"
           class="w-[28px] h-[56px] md:w-[64px] lg:w-[109px] md:h-[84px] bg-white rounded-[24px] hover:bg-blue text-darkNavy hover:text-white flex justify-center items-center mt-2 cursor-pointer"
         >
           <p class="text-[24px] md:text-heading-m">{{ letter }}</p>
         </div>
-        <!-- Disabled div -->
+         <!-- Disabled div -->
         <div
           *ngIf="isDisabledLetter(letter)"
           class="w-[28px] h-[56px] md:w-[64px] lg:w-[109px] md:h-[84px] bg-white opacity-25 rounded-[24px] flex justify-center items-center mt-2"

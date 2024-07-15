@@ -87,7 +87,7 @@ export class AppComponent {
     const words = this.data[category];
     this.currentWord = words[Math.floor(Math.random() * words.length)];
     this.specialLetters = this.getSpecialLetters(this.currentWord);
-    this.disabledLetters = this.getDisabledLetters(this.currentWord);
+    // this.disabledLetters = this.getDisabledLetters(this.currentWord);
 
     this.showPickACategory = false;
     this.showHome = false;
@@ -100,8 +100,8 @@ export class AppComponent {
     return Array.from(new Set(word.replace(/\s/g, '').split(''))).slice(0, 5);
   }
 
-  getDisabledLetters(word: string): string[] {
-    // Define logic to get disabled letters based on your game rules
-    return Array.from(new Set('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').filter(l => !word.includes(l)))).slice(0, 5);
-  }
+  // getDisabledLetters(word: string): string[] {
+  //   // Define logic to get disabled letters based on your game rules
+  //   return Array.from(new Set('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').filter(l => !word.includes(l)))).slice(0, 5);
+  // }
 }
