@@ -19,13 +19,21 @@ export class InGameComponent implements OnInit {
   constructor(private gameStateService: GameStateService) {}
 
   ngOnInit(): void {
-    console.log("initial word and disabled letter", this.word, this.disabledLetters);
-    console.log("initial word and special letters", this.word, this.specialLetters);
+    console.log(
+      'initial word and disabled letter',
+      this.word,
+      this.disabledLetters
+    );
+    console.log(
+      'initial word and special letters',
+      this.word,
+      this.specialLetters
+    );
 
     this.gameStateService.resetGameState$.subscribe(() => {
       this.disabledLetters = [];
       this.losedLetter = [];
-      console.log("Game state has been reset");
+      console.log('Game state has been reset');
     });
   }
 
@@ -83,14 +91,18 @@ export class InGameComponent implements OnInit {
           console.log('you win');
           this.gameStateService.updateGameResult('win');
         }
+      } else {
+        this.losedLetter.push(letter);
+        console.log("lose letter in: ",this.losedLetter);
+        this.gameStateService.updateLosedLetterLength(this.losedLetter.length);
+        this.disabledLetters.push(letter);
       }
-      this.disabledLetters.push(letter);
     }
   }
-  
+
   handlePlayAgainEvent() {
     this.gameStateService.resetGameState();
     this.playAgain.emit();
-    console.log("play again clicked in in-game");
+    console.log('play again clicked in in-game');
   }
 }
