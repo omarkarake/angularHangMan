@@ -33,6 +33,9 @@ export class InGameComponent implements OnInit {
       console.log('word', this.word);
       console.log('special letter if not in the words', this.specialLetters);
       console.log('losed letters length: ', this.losedLetter.length);
+      if (this.losedLetter.length === 8) {
+        console.log('you lost');
+      }
       
     }else{
       console.log(letter);
@@ -45,11 +48,20 @@ export class InGameComponent implements OnInit {
         this.specialLetters.splice(this.indexOfSpecialLetter, 1);
         console.log('special letter after deleting index: ', this.specialLetters);
         console.log('losed letters length: ', this.losedLetter.length);
+        if (this.losedLetter.length === 8) {
+          console.log('you lost');
+        }
+        if (this.specialLetters.length < 1) {
+          console.log('you win');
+        }
       }else{
         this.losedLetter.push(letter);
         this.disabledLetters.push(letter);
         console.log('disabled letters: ', this.disabledLetters);
         console.log('losed letters length: ', this.losedLetter.length);
+        if (this.losedLetter.length === 8) {
+          console.log('you lost');
+        }
       }
     }
   }
