@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-in-game',
   templateUrl: './in-game.component.html',
@@ -11,6 +10,7 @@ export class InGameComponent implements OnInit {
   disabledLetters: string[] = [];
   alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   indexOfSpecialLetter: number | undefined;
+  losedLetter: string[] = [];
   ngOnInit(): void {
     console.log("initial word and disabled letter", this.word, this.disabledLetters);
     console.log("initial word and special letters",this.word, this.specialLetters);
@@ -29,8 +29,11 @@ export class InGameComponent implements OnInit {
     if (!this.word.toLowerCase().includes(letter.toLowerCase())) {
       this.disabledLetters.push(letter);
       console.log(letter);
+      this.losedLetter.push(letter);
       console.log('word', this.word);
       console.log('special letter if not in the words', this.specialLetters);
+      console.log('losed letters length: ', this.losedLetter.length);
+      
     }else{
       console.log(letter);
       console.log('word: ', this.word);
@@ -41,6 +44,9 @@ export class InGameComponent implements OnInit {
         console.log('special letter index: ', this.indexOfSpecialLetter);
         this.specialLetters.splice(this.indexOfSpecialLetter, 1);
         console.log('special letter after deleting index: ', this.specialLetters);
+      }else{
+        this.disabledLetters.push(letter);
+        console.log('disabled letters: ', this.disabledLetters);
       }
     }
   }
