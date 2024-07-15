@@ -35,10 +35,13 @@ export class InGameComponent implements OnInit {
       console.log(letter);
       console.log('word: ', this.word);
       console.log('special letter: ', this.specialLetters);
-      this.indexOfSpecialLetter = this.specialLetters.indexOf(letter);
-      console.log('special letter index: ', this.indexOfSpecialLetter);
-      this.specialLetters.splice(this.indexOfSpecialLetter, 1);
-      console.log('special letter after deleting index: ', this.specialLetters);
+      console.log('do we have this letter in this array: ', this.specialLetters.includes(letter));
+      if (this.specialLetters.includes(letter)) {
+        this.indexOfSpecialLetter = this.specialLetters.indexOf(letter);
+        console.log('special letter index: ', this.indexOfSpecialLetter);
+        this.specialLetters.splice(this.indexOfSpecialLetter, 1);
+        console.log('special letter after deleting index: ', this.specialLetters);
+      }
     }
   }
 }
