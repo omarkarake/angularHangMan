@@ -61,6 +61,7 @@ export class AppComponent {
       "Baseball"
     ]
   };
+  selectedCategory: string = '';
 
   constructor(private gameStateService: GameStateService) {
     this.transformDataToUpperCase();
@@ -120,9 +121,14 @@ export class AppComponent {
     return uniqueLetters.slice(0, specialLettersCount);
   }
 
+  categoryPicked(category: string){
+    console.log("category selected is: ", category);
+    this.selectedCategory = category;
+  }
+
   handlePlayAgainEvent() {
     this.gameStateService.resetGameState();
     console.log("play again clicked in app component");
-    this.pickCategoryEvent('movies'); // you can modify to randomly pick a category or based on previous selection
+    this.pickCategoryEvent(this.selectedCategory); // you can modify to randomly pick a category or based on previous selection
   }
 }
