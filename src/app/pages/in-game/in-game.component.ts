@@ -30,14 +30,14 @@ export class InGameComponent implements OnInit {
       this.disabledLetters.push(letter);
       console.log(letter);
       console.log('word', this.word);
-      console.log('special letter', this.specialLetters);
+      console.log('special letter if not in the words', this.specialLetters);
     }else{
       console.log(letter);
       console.log('word: ', this.word);
       console.log('special letter: ', this.specialLetters);
-      this.indexOfSpecialLetter = this.specialLetters.indexOf(letter.toLowerCase())
+      this.indexOfSpecialLetter = this.specialLetters.indexOf(letter);
+      console.log('special letter index: ', this.indexOfSpecialLetter);
       this.specialLetters.splice(this.indexOfSpecialLetter, 1);
-      console.log('special letter index: ', this.specialLetters.indexOf(letter));
       console.log('special letter after deleting index: ', this.specialLetters);
     }
   }
