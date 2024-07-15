@@ -10,6 +10,7 @@ export class NavigatioHeaderComponent implements OnInit {
   @Output() back = new EventEmitter();
   @Output() playAgain = new EventEmitter();
   @Output() newCategoryPlay = new EventEmitter();
+  @Output() quitGameToHome = new EventEmitter();
   @Input('pageType') pageType: string | undefined;
   losedLetterLength: number = 0;
   isPauseModelVisible: boolean = false;
@@ -81,6 +82,8 @@ export class NavigatioHeaderComponent implements OnInit {
 
   quitGame() {
     this.closeGameResultModel();
+    this.isPauseModelVisible = false;
     console.log('quit game clicked in nav');
+    this.quitGameToHome.emit();
   }
 }

@@ -13,5 +13,5 @@
   <app-home *ngIf="showHome" (openHowToPlay)="openHowToPlay()" (openToPlay)="openToPlay()"></app-home>
   <app-how-to-play [pageType]="'pick-category'" *ngIf="showHowToPlay" (goBack)="goBackToHome()"></app-how-to-play>
   <app-pick-category (categoryPicked)="categoryPicked($event)" [pageType]="'pick-category'" *ngIf="showPickACategory" (goBack)="goBackToHome()" (pickCategoryEvent)="pickCategoryEvent($event)" />
-  <app-in-game (newCategory)="newCategory()" (playAgain)="handlePlayAgainEvent()" *ngIf="showInGame" [word]="currentWord" [specialLetters]="specialLetters"/>
+  <app-in-game (quitGameToHome)="quitGameToHome()" (newCategory)="newCategory()" (playAgain)="handlePlayAgainEvent()" *ngIf="showInGame" [word]="currentWord" [specialLetters]="specialLetters"/>
 </div>

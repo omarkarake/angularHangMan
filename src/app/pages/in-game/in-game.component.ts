@@ -12,6 +12,7 @@ export class InGameComponent implements OnInit {
   @Input() specialLetters: string[] = [];
   @Output() newCategory = new EventEmitter();
   @Output() playAgain = new EventEmitter();
+  @Output() quitGameToHome = new EventEmitter();
   disabledLetters: string[] = [];
   alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   indexOfSpecialLetter: number | undefined;
@@ -106,8 +107,13 @@ export class InGameComponent implements OnInit {
     this.playAgain.emit();
     console.log('play again clicked in in-game');
   }
-
+  quitGameToHomeInGame(){
+    this.gameStateService.resetGameState();
+    this.quitGameToHome.emit();
+  }
+  
   newCategoryPlay(){
+    this.gameStateService.resetGameState();
     this.newCategory.emit();
     console.log("new category in game clicked");
   }

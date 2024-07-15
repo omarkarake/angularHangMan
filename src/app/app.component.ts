@@ -136,4 +136,9 @@ export class AppComponent {
     this.openToPlay();
     console.log('new category clicked in app component');
   }
+
+  quitGameToHome(){
+    console.log("quit game on app component");
+    this.goBackToHome();
+  }
 }
