@@ -10,6 +10,7 @@ export class NavigatioHeaderComponent implements OnInit {
   @Output() back = new EventEmitter();
   @Input('pageType') pageType: string | undefined;
   losedLetterLength: number = 0;
+  isPauseModelVisible: boolean = false;
 
   constructor(private gameStateService: GameStateService) {}
 
@@ -25,5 +26,9 @@ export class NavigatioHeaderComponent implements OnInit {
 
   getProgressBarWidth(): string {
     return `${(100 - (this.losedLetterLength * 12.5))}%`;
+  }
+
+  togglePauseModel() {
+    this.isPauseModelVisible = !this.isPauseModelVisible;
   }
 }

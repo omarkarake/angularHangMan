@@ -1,4 +1,4 @@
-<div>
+<div class="relative">
     <!-- Before game -->
     <div *ngIf="pageType === 'how-to-play' || pageType === 'pick-category'" class="w-[100%] h-[58px] lg:h-auto flex justify-between items-center md:justify-start">
       <!-- div Icon back -->
@@ -18,7 +18,8 @@
     <!-- In game -->
     <div *ngIf="pageType !== 'how-to-play' && pageType !== 'pick-category'" class="w-[100%] h-[58px] lg:h-auto flex justify-between items-center font-mouseMemoirs">
       <div class="flex items-center gap-4">
-        <div class="w-10 h-10 md:w-16 md:h-16 lg:w-[94px] lg:h-[94px] bg-pink-gradient rounded-full shadow-inner-custom-ingame-menu flex justify-center items-center">
+        <!-- If I click on this div I want to render the model for menu -->
+        <div (click)="togglePauseModel()" class="w-10 h-10 md:w-16 md:h-16 lg:w-[94px] lg:h-[94px] bg-pink-gradient rounded-full shadow-inner-custom-ingame-menu flex justify-center items-center">
           <img class="w-[16px] h-[13px] md:w-[25px] md:h-[21px] lg:w-[38px] lg:h-[32px]" src="../../../assets/images/icon-menu.svg">
         </div>
         <div><p class="text-[40px] text-white leading-[120%] md:text-heading-m lg:text-heading-l">Countries</p></div>
@@ -32,5 +33,30 @@
         </div>
       </div>
     </div>
-  </div>
-  
+
+    <!-- Pause Model -->
+    <div *ngIf="isPauseModelVisible" class="bg-blue-action-gradient-opacity min-h-screen max-h-[100%] w-[100%] font-mouseMemoirs flex flex-col justify-center items-center absolute top-0 z-10">
+      <div class="w-[90%] h-[531px] md:w-[592px] md:h-[445px] bg-blue-gradient-opacity-80 rounded-[48px] text-white text-heading-s shadow-inner-custom-home2 cursor-pointer">
+        <div class="w-[100%] h-[100%] shadow-inner-custom-home1 rounded-[48px] flex flex-col items-center relative pb-[87px] md:pb-[71px]">
+          <img class="w-[263px] h-[130.2px] md:w-[373.69px] md:h-[180px] left-13 absolute -mt-14 md:left-28 md:-mt-20" src="../../../assets/images/Paused.svg"/>
+          <div class="w-[275px] mt-[57px] h-[100%] flex flex-col items-center justify-end gap-[34px]">
+            <div class="w-[226px] h-[62px] bg-blue rounded-[40px] text-white text-heading-s shadow-inner-custom-top-btn cursor-pointer">
+              <div (click)="togglePauseModel()" class="w-[100%] h-[100%] hover:bg-white-opacity-20 shadow-inner-custom-bottom-btn rounded-[40px] flex justify-center items-center">
+                <p>CONTINUE</p>
+              </div>
+            </div>
+            <div class="w-[100%] h-[62px] bg-blue rounded-[40px] text-white text-heading-s shadow-inner-custom-top-btn cursor-pointer">
+              <div class="w-[100%] h-[100%] hover:bg-white-opacity-20 shadow-inner-custom-bottom-btn rounded-[40px] flex justify-center items-center">
+                <p>NEW CATEGORY</p>
+              </div>
+            </div>
+            <div class="w-[235px] h-[62px] bg-pink-gradient rounded-[40px] text-white text-heading-s shadow-inner-custom-top-btn2 cursor-pointer">
+              <div class="w-[100%] h-[100%] hover:bg-white-opacity-20 shadow-inner-custom-bottom-btn rounded-[40px] flex justify-center items-center">
+                <p>HOW TO PLAY</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
