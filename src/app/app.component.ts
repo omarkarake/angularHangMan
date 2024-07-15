@@ -15,7 +15,7 @@ export class AppComponent {
   specialLetters: string[] = [];
   disabledLetters: string[] = [];
 
-  data:any = {
+  data: any = {
     movies: [
       "The Shawshank Redemption",
       "The Godfather",
@@ -60,7 +60,17 @@ export class AppComponent {
     ]
   };
 
-  constructor() {}
+  constructor() {
+    this.transformDataToUpperCase();
+  }
+
+  transformDataToUpperCase() {
+    for (let category in this.data) {
+      if (this.data.hasOwnProperty(category)) {
+        this.data[category] = this.data[category].map((item: string) => item.toUpperCase());
+      }
+    }
+  }
 
   openHowToPlay() {
     this.showHome = false;
@@ -87,7 +97,7 @@ export class AppComponent {
     const words = this.data[category];
     this.currentWord = words[Math.floor(Math.random() * words.length)];
     this.specialLetters = this.getSpecialLetters(this.currentWord);
-    // this.disabledLetters = this.getDisabledLetters(this.currentWord);
+    this.disabledLetters = [];
 
     this.showPickACategory = false;
     this.showHome = false;

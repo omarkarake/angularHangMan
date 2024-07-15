@@ -13,7 +13,6 @@ export class InGameComponent implements OnInit {
   indexOfSpecialLetter: number | undefined;
   ngOnInit(): void {
     console.log("initial word and disabled letter", this.word, this.disabledLetters);
-    console.log("initial word and special letters",this.word, this.specialLetters[0] = this.specialLetters[0].toLowerCase());
     console.log("initial word and special letters",this.word, this.specialLetters);
   }
   isSpecialLetter(letter: string): boolean {
