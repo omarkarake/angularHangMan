@@ -96,12 +96,15 @@ export class AppComponent {
   }
 
   getSpecialLetters(word: string): string[] {
-    // Define logic to get special letters based on your game rules
-    return Array.from(new Set(word.replace(/\s/g, '').split(''))).slice(0, 5);
-  }
+    const uniqueLetters = Array.from(new Set(word.replace(/\s/g, '').split('')));
+    let specialLettersCount = 0;
 
-  // getDisabledLetters(word: string): string[] {
-  //   // Define logic to get disabled letters based on your game rules
-  //   return Array.from(new Set('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').filter(l => !word.includes(l)))).slice(0, 5);
-  // }
+    if (uniqueLetters.length > 8) {
+      specialLettersCount = Math.min(6, uniqueLetters.length);
+    } else {
+      specialLettersCount = Math.ceil(uniqueLetters.length * 0.5);
+    }
+
+    return uniqueLetters.slice(0, specialLettersCount);
+  }
 }
