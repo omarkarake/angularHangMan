@@ -11,6 +11,7 @@ import { InGameComponent } from './pages/in-game/in-game.component';
 import { PauseMenuComponent } from './pages/pause-menu/pause-menu.component';
 import { YouWinComponent } from './pages/you-win/you-win.component';
 import { YouLoseComponent } from './pages/you-lose/you-lose.component';
+import { CustomTransformPipe } from './pipe/custom-transform.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { YouLoseComponent } from './pages/you-lose/you-lose.component';
     InGameComponent,
     PauseMenuComponent,
     YouWinComponent,
-    YouLoseComponent
+    YouLoseComponent,
+    CustomTransformPipe
   ],
   imports: [
     BrowserModule,
