@@ -1,35 +1,36 @@
 <div>
     <!-- Before game -->
     <div *ngIf="pageType === 'how-to-play' || pageType === 'pick-category'" class="w-[100%] h-[58px] lg:h-auto flex justify-between items-center md:justify-start">
-        <!-- div Icon back -->
-        <div (click)="goBack()" class="w-10 h-10 md:w-16 md:h-16 lg:w-[94px] lg:h-[94px] bg-pink-gradient rounded-full flex justify-center items-center cursor-pointer">
-            <img class="w-[17.45px] h-[16.17px] md:w-[28px] md:h-[26px] lg:w-[41px] lg:h-[38px]" src="../../../assets/images/icon-back.svg">
+      <!-- div Icon back -->
+      <div (click)="goBack()" class="w-10 h-10 md:w-16 md:h-16 lg:w-[94px] lg:h-[94px] bg-pink-gradient rounded-full flex justify-center items-center cursor-pointer">
+        <img class="w-[17.45px] h-[16.17px] md:w-[28px] md:h-[26px] lg:w-[41px] lg:h-[38px]" src="../../../assets/images/icon-back.svg">
+      </div>
+      <div>
+        <div class="w-[185px] md:w-[343px] lg:w-[448px] md:ml-[105px] lg:ml-[288px]">
+          <img *ngIf="pageType === 'how-to-play'" src="../../../assets/images/how-to-play-desktop.svg">
+          <img *ngIf="pageType === 'pick-category'" src="../../../assets/images/pick-categoy-desktop.svg">
         </div>
-        <div>
-            <div class="w-[185px] md:w-[343px] lg:w-[448px] md:ml-[105px] lg:ml-[288px]">
-                <img *ngIf="pageType === 'how-to-play'" src="../../../assets/images/how-to-play-desktop.svg">
-                <img *ngIf="pageType === 'pick-category'" src="../../../assets/images/pick-categoy-desktop.svg">
-            </div>
-         </div>
+      </div>
     </div>
     
     <!-- ----------------------------------------------------------------------------------------------------- -->
     
     <!-- In game -->
     <div *ngIf="pageType !== 'how-to-play' && pageType !== 'pick-category'" class="w-[100%] h-[58px] lg:h-auto flex justify-between items-center font-mouseMemoirs">
-        <div class="flex items-center gap-4">
-            <div class="w-10 h-10 md:w-16 md:h-16 lg:w-[94px] lg:h-[94px] bg-pink-gradient rounded-full shadow-inner-custom-ingame-menu flex justify-center items-center">
-                <img class="w-[16px] h-[13px] md:w-[25px] md:h-[21px] lg:w-[38px] lg:h-[32px]" src="../../../assets/images/icon-menu.svg">
-            </div>
-            <div><p class="text-[40px] text-white leading-[120%] md:text-heading-m lg:text-heading-l">Countries</p></div>
+      <div class="flex items-center gap-4">
+        <div class="w-10 h-10 md:w-16 md:h-16 lg:w-[94px] lg:h-[94px] bg-pink-gradient rounded-full shadow-inner-custom-ingame-menu flex justify-center items-center">
+          <img class="w-[16px] h-[13px] md:w-[25px] md:h-[21px] lg:w-[38px] lg:h-[32px]" src="../../../assets/images/icon-menu.svg">
         </div>
-        <div class="flex items-center gap-4 md:gap-10">
-            <div class="w-[56px] md:w-[160px] lg:w-[240px] h-[16px] md:h-[31px] bg-white rounded-[96px] p-1 md:px-[11px] md:py-[9px]">
-                <div class="w-[21px] h-2 md:w-[63px] lg:w-[119px] md:h-[13px] bg-darkNavy rounded-[96px]"></div>
-            </div>
-            <div>
-                <img class="w-[26px] h-[24px] md:w-[53px] md:h-[48px]" src="../../../assets/images/icon-heart.svg">
-            </div>
+        <div><p class="text-[40px] text-white leading-[120%] md:text-heading-m lg:text-heading-l">Countries</p></div>
+      </div>
+      <div class="flex items-center gap-4 md:gap-10">
+        <div class="w-[56px] md:w-[160px] lg:w-[240px] h-[16px] md:h-[31px] bg-white rounded-[96px] p-1 md:px-[11px] md:py-[9px]">
+          <div [style.width]="getProgressBarWidth()" class="h-2 md:h-[13px] bg-darkNavy rounded-[96px]"></div>
         </div>
+        <div>
+          <img class="w-[26px] h-[24px] md:w-[53px] md:h-[48px]" src="../../../assets/images/icon-heart.svg">
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+  
