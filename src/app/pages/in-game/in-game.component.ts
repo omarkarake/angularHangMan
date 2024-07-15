@@ -44,9 +44,12 @@ export class InGameComponent implements OnInit {
         console.log('special letter index: ', this.indexOfSpecialLetter);
         this.specialLetters.splice(this.indexOfSpecialLetter, 1);
         console.log('special letter after deleting index: ', this.specialLetters);
+        console.log('losed letters length: ', this.losedLetter.length);
       }else{
+        this.losedLetter.push(letter);
         this.disabledLetters.push(letter);
         console.log('disabled letters: ', this.disabledLetters);
+        console.log('losed letters length: ', this.losedLetter.length);
       }
     }
   }
