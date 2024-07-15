@@ -22,7 +22,8 @@
             <div (click)="togglePauseModel()" class="w-10 h-10 md:w-16 md:h-16 lg:w-[94px] lg:h-[94px] bg-pink-gradient rounded-full shadow-inner-custom-ingame-menu flex justify-center items-center">
                 <img class="w-[16px] h-[13px] md:w-[25px] md:h-[21px] lg:w-[38px] lg:h-[32px]" src="../../../assets/images/icon-menu.svg">
             </div>
-            <div><p class="text-[40px] text-white leading-[120%] md:text-heading-m lg:text-heading-l">Countries</p></div>
+            <!-- rendering category here -->
+            <div><p class="text-[40px] text-white leading-[120%] md:text-heading-m lg:text-heading-l">{{selectedCategory}}</p></div>
         </div>
         <div class="flex items-center gap-4 md:gap-10">
             <div class="w-[56px] md:w-[160px] lg:w-[240px] h-[16px] md:h-[31px] bg-white rounded-[96px] p-1 md:px-[11px] md:py-[9px]">

@@ -7,6 +7,7 @@ import { GameStateService } from '../../services/game-state.service';
   styleUrls: ['./navigatio-header.component.css'],
 })
 export class NavigatioHeaderComponent implements OnInit {
+  @Input('selectedCategory') selectedCategory:string | undefined;
   @Output() back = new EventEmitter();
   @Output() playAgain = new EventEmitter();
   @Output() newCategoryPlay = new EventEmitter();

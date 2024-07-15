@@ -10,6 +10,7 @@ import { GameStateService } from '../../services/game-state.service';
 export class InGameComponent implements OnInit {
   @Input() word: string = '';
   @Input() specialLetters: string[] = [];
+  @Input() selectedCategory: string | undefined;
   @Output() newCategory = new EventEmitter();
   @Output() playAgain = new EventEmitter();
   @Output() quitGameToHome = new EventEmitter();
