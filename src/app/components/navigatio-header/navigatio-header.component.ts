@@ -24,17 +24,14 @@ export class NavigatioHeaderComponent implements OnInit {
       this.losedLetterLength = length;
       if (this.losedLetterLength === 8) {
         this.gameResult = 'lose';
-        console.log('you lost in the navigation');
       }
     });
 
     this.gameStateService.gameResult$.subscribe((result) => {
       if (result === 'win') {
         this.gameResult = 'win';
-        console.log('you won in the navigation');
       } else if (result === 'lose') {
         this.gameResult = 'lose';
-        console.log('you lost in the navigation');
       }
     });
   }
@@ -53,13 +50,12 @@ export class NavigatioHeaderComponent implements OnInit {
 
   closeGameResultModel() {
     this.gameResult = null;
-    console.log("game result is null");
   }
 
   handleContinue() {
     if (this.gameResult) {
       this.playAgain.emit();
-      this.gameStateService.resetGameState(); // Reset game state
+      this.gameStateService.resetGameState();
     } else {
       this.togglePauseModel();
     }
@@ -67,15 +63,13 @@ export class NavigatioHeaderComponent implements OnInit {
   }
 
   playAgainBtn() {
-    console.log('play again in navigation clicked');
     this.playAgain.emit();
-    this.gameStateService.resetGameState(); // Reset game state
+    this.gameStateService.resetGameState();
     this.closeGameResultModel();
   }
 
   newCategory(event: Event) {
-    console.log('new category clicked in nav');
-    this.gameStateService.resetGameState(); // Reset game state
+    this.gameStateService.resetGameState();
     this.gameResult = null;
     this.isPauseModelVisible = false;
     this.newCategoryPlay.emit();
@@ -84,7 +78,6 @@ export class NavigatioHeaderComponent implements OnInit {
   quitGame() {
     this.closeGameResultModel();
     this.isPauseModelVisible = false;
-    console.log('quit game clicked in nav');
     this.quitGameToHome.emit();
   }
 }
