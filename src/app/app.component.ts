@@ -131,4 +131,9 @@ export class AppComponent {
     console.log("play again clicked in app component");
     this.pickCategoryEvent(this.selectedCategory); // you can modify to randomly pick a category or based on previous selection
   }
+
+  newCategory(){
+    this.openToPlay();
+    console.log('new category clicked in app component');
+  }
 }

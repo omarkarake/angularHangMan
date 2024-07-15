@@ -1,4 +1,3 @@
-// src/app/services/game-state.service.ts
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -14,6 +13,8 @@ export class GameStateService {
   gameResult$ = this.gameResultSubject.asObservable();
   resetGameState$ = this.resetGameStateSubject.asObservable();
 
+  private shouldLogResults = true;
+
   updateLosedLetterLength(length: number): void {
     this.losedLetterLengthSubject.next(length);
   }
@@ -26,5 +27,17 @@ export class GameStateService {
     this.losedLetterLengthSubject.next(0);
     this.gameResultSubject.next(null);
     this.resetGameStateSubject.next();
+  }
+
+  startLogging(): void {
+    this.shouldLogResults = true;
+  }
+
+  stopLogging(): void {
+    this.shouldLogResults = false;
+  }
+
+  get shouldLog(): boolean {
+    return this.shouldLogResults;
   }
 }

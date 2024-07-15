@@ -10,6 +10,7 @@ import { GameStateService } from '../../services/game-state.service';
 export class InGameComponent implements OnInit {
   @Input() word: string = '';
   @Input() specialLetters: string[] = [];
+  @Output() newCategory = new EventEmitter();
   @Output() playAgain = new EventEmitter();
   disabledLetters: string[] = [];
   alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -104,5 +105,10 @@ export class InGameComponent implements OnInit {
     this.gameStateService.resetGameState();
     this.playAgain.emit();
     console.log('play again clicked in in-game');
+  }
+
+  newCategoryPlay(){
+    this.newCategory.emit();
+    console.log("new category in game clicked");
   }
 }
