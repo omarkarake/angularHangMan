@@ -6,8 +6,10 @@
         <img class="w-[17.45px] h-[16.17px] md:w-[28px] md:h-[26px] lg:w-[41px] lg:h-[38px]" src="../../../assets/images/icon-back.svg">
     </div>
     <div>
-        <img *ngIf="pageType === 'how-to-play'" src="../../../assets/images/how-to-play.svg">
-        <img *ngIf="pageType === 'pick-category'" src="../../../assets/images/pick-a-category.svg">
+        <div class="w-[185px] md:w-[343px] lg:w-[448px] md:ml-[105px] lg:ml-[288px]">
+            <img *ngIf="pageType === 'how-to-play'" src="../../../assets/images/how-to-play-desktop.svg">
+            <img *ngIf="pageType === 'pick-category'" src="../../../assets/images/pick-categoy-desktop.svg">
+        </div>
      </div>
 </div>
 
