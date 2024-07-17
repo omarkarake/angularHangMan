@@ -2,7 +2,7 @@
     <!-- Before game -->
     <div *ngIf="pageType === 'how-to-play' || pageType === 'pick-category'" class="w-[100%] h-[58px] lg:h-auto flex justify-between items-center md:justify-start">
         <!-- div Icon back -->
-        <div (click)="goBack()" class="w-10 h-10 md:w-16 md:h-16 lg:w-[94px] lg:h-[94px] bg-pink-gradient rounded-full flex justify-center items-center cursor-pointer">
+        <div (click)="goBack()" class="w-10 h-10 md:w-16 md:h-16 lg:w-[94px] lg:h-[94px] bg-pink-gradient rounded-full flex justify-center shadow-inner-custom-ingame-menu md:inner-custom-ingame-menu-desktop items-center cursor-pointer">
             <img class="w-[17.45px] h-[16.17px] md:w-[28px] md:h-[26px] lg:w-[41px] lg:h-[38px]" src="../../../assets/images/icon-back.svg">
         </div>
         <div>
@@ -19,7 +19,7 @@
     <div *ngIf="pageType !== 'how-to-play' && pageType !== 'pick-category'" class="w-[100%] h-[58px] lg:h-auto flex justify-between items-center font-mouseMemoirs">
         <div class="flex items-center gap-4">
             <!-- If I click on this div I want to render the model for menu -->
-            <div (click)="togglePauseModel()" class="w-10 h-10 md:w-16 md:h-16 lg:w-[94px] lg:h-[94px] bg-pink-gradient rounded-full shadow-inner-custom-ingame-menu flex justify-center items-center">
+            <div (click)="togglePauseModel()" class="w-10 h-10 md:w-16 md:h-16 lg:w-[94px] lg:h-[94px] bg-pink-gradient rounded-full shadow-inner-custom-ingame-menu md:shadow-inner-custom-ingame-menu-desktop flex justify-center items-center">
                 <img class="w-[16px] h-[13px] md:w-[25px] md:h-[21px] lg:w-[38px] lg:h-[32px]" src="../../../assets/images/icon-menu.svg">
             </div>
             <!-- rendering category here -->

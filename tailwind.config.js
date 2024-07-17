@@ -37,6 +37,7 @@ module.exports = {
         'inner-custom-home1': 'inset 0 -8px 0 4px #140E66',
         'inner-custom-home2': 'inset 0 6px 0 8px #2463FF',
         'inner-custom-ingame-menu': 'inset 0 -5px 0 -1px rgba(157, 45, 245, 0.2)',
+        'inner-custom-ingame-menu-desktop': 'inset 0 -6px 0 22px rgba(157, 45, 245, 0.2)',
       },
     },
   },
