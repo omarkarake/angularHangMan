@@ -20,10 +20,7 @@ export class InGameComponent implements OnInit {
 
   constructor(private gameStateService: GameStateService) {}
 
-  ngOnInit(): void {
-    console.log(`selected Word is: ${this.word} and specialWords are: ${this.specialLetters}`);
-    
-
+  ngOnInit(): void {    
     this.gameStateService.resetGameState$.subscribe(() => {
       this.disabledLetters = [];
       this.losedLetter = [];
