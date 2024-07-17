@@ -1,4 +1,4 @@
-## the hosted link for the project: https://gentle-narwhal-8ccac9.netlify.app/
+## the hosted link for the project: https://angular-hangman.netlify.app/
 
 ## 1. Navigation Header Component (NavigatioHeaderComponent)
 This component handles the display and interactions at the top of the game interface.
