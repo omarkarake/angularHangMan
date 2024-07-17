@@ -46,6 +46,7 @@ export class InGameComponent implements OnInit {
       }
     } else {
       if (this.specialLetters.includes(letter)) {
+        this.disabledLetters.push(letter);
         this.indexOfSpecialLetter = this.specialLetters.indexOf(letter);
         this.specialLetters.splice(this.indexOfSpecialLetter, 1);
         if (this.specialLetters.length < 1) {
