@@ -33,4 +33,10 @@ describe('PickCategoryComponent', () => {
     expect(emitSpycategoryPicked).toHaveBeenCalledWith(category);
     expect(emitSpypickCategoryEvent).toHaveBeenCalledWith(category);
   });
+
+  it('should backToHome emit the goBack', ()=>{
+    const emitSpyGoBack = jest.spyOn(component.goBack, 'emit');
+    component.backToHome();
+    expect(emitSpyGoBack).toHaveBeenCalled();
+  })
 });
