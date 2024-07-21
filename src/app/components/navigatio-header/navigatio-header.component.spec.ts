@@ -138,4 +138,18 @@ describe('NavigatioHeaderComponent', () => {
     component.gameResult = 'lose';
     expect(component.gameResult).toBe('lose');
   });
+
+  it('should call togglePauseModel if gameResult is null in handleContinue', () => {
+    jest.spyOn(component, 'togglePauseModel');
+    component.gameResult = null;
+    component.handleContinue();
+    expect(component.togglePauseModel).toHaveBeenCalled();
+  });
+
+  it('should not call togglePauseModel if gameResult is not null in handleContinue', () => {
+    jest.spyOn(component, 'togglePauseModel');
+    component.gameResult = 'win';
+    component.handleContinue();
+    expect(component.togglePauseModel).not.toHaveBeenCalled();
+  });
 });
