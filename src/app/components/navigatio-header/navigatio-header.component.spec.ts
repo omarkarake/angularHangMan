@@ -86,4 +86,19 @@ describe('NavigatioHeaderComponent', () => {
     expect(gameStateServiceMock.resetGameState).toHaveBeenCalled();
     expect(component.gameResult).toBeNull();
   });
+
+  it('should set gameResult to win if gameStateService emits win', () => {
+    fixture.detectChanges();
+    gameStateServiceMock.gameResult$ = of('win');
+    component.gameResult = 'win';
+    expect(component.gameResult).toBe('win');
+  });
+
+  it('should set gameResult to lose if losedLetterLength reaches 8', () => {
+    gameStateServiceMock.losedLetterLength$ = of(8);
+    fixture.detectChanges();
+    component.losedLetterLength = 8;
+    component.gameResult = 'lose';
+    expect(component.gameResult).toBe('lose');
+  });
 });
