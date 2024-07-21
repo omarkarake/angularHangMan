@@ -20,4 +20,10 @@ describe('HowToPlayComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should backToHome emit goBack', ()=>{
+    const emitSpyGoBack = jest.spyOn(component.goBack, 'emit');
+    component.backToHome();
+    expect(emitSpyGoBack).toHaveBeenCalled();
+  })
 });
