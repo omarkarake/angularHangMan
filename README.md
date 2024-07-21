@@ -85,3 +85,6 @@ Allows updating and resetting of the game state.
 Component Communication: Uses @Input and @Output decorators to pass data and events between components.
 Game State Management: Uses GameStateService to handle and distribute game state changes.
 Responsive Design: Uses Tailwind CSS classes and Angular directives for responsive layout and styling.
+
+## test coverage
+![alt text](image.png)
