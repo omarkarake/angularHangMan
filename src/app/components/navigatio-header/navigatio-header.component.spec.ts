@@ -2,18 +2,23 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NavigatioHeaderComponent } from './navigatio-header.component';
 import { GameStateService } from '../../services/game-state.service';
 import { CustomTransformPipe } from '../../pipe/custom-transform.pipe';
-import { of } from 'rxjs';
+import { BehaviorSubject, of } from 'rxjs';
 
 describe('NavigatioHeaderComponent', () => {
   let component: NavigatioHeaderComponent;
   let fixture: ComponentFixture<NavigatioHeaderComponent>;
   let gameStateServiceMock: any;
+  let losedLetterLengthSubject: BehaviorSubject<number>;
+  let gameResultSubject: BehaviorSubject<'win' | 'lose' | null>;
 
   beforeEach(async () => {
-    // Mocking GameStateService
+    // Mocking GameStateService with BehaviorSubject
+    losedLetterLengthSubject = new BehaviorSubject<number>(0);
+    gameResultSubject = new BehaviorSubject<'win' | 'lose' | null>(null);
+
     gameStateServiceMock = {
-      losedLetterLength$: of(0),
-      gameResult$: of(null),
+      losedLetterLength$: losedLetterLengthSubject.asObservable(),
+      gameResult$: gameResultSubject.asObservable(),
       resetGameState: jest.fn(),
     };
 
@@ -29,6 +34,38 @@ describe('NavigatioHeaderComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should set gameResult to win if gameStateService emits win', () => {
+    gameResultSubject.next('win');
+    fixture.detectChanges();
+    expect(component.gameResult).toBe('win');
+  });
+
+  it('should set gameResult to lose if gameStateService emits lose', () => {
+    gameResultSubject.next('lose');
+    fixture.detectChanges();
+    expect(component.gameResult).toBe('lose');
+  });
+
+  it('should set gameResult to lose if losedLetterLength reaches 8', () => {
+    losedLetterLengthSubject.next(8);
+    fixture.detectChanges();
+    expect(component.gameResult).toBe('lose');
+  });
+
+  it('should not set gameResult if losedLetterLength is less than 8', () => {
+    losedLetterLengthSubject.next(7);
+    fixture.detectChanges();
+    expect(component.gameResult).toBeNull();
+  });
+
+  it('should handle losedLetterLength and gameResult updates correctly in ngOnInit', () => {
+    losedLetterLengthSubject.next(5);
+    gameResultSubject.next('win');
+    fixture.detectChanges();
+    expect(component.losedLetterLength).toBe(5);
+    expect(component.gameResult).toBe('win');
   });
 
   it('should emit back event on goBack call', () => {
